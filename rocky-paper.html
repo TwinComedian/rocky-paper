@@ -21,7 +21,10 @@
                 <div id="c-score">00</div>
             </div>
         </div>
-        <div id="round">Round:0</div>
+        <div id="round">
+            <div id="round-text">Round</div>
+            <div id="round-num">1</div>
+        </div>
     </div>
     <div class="selection">
         <div id="preview">
@@ -29,8 +32,11 @@
             <div id="preview-text">VS</div>
             <div id="preview-item" style="height: 150px; width: 150px;"></div>
         </div>
+        <div id="results"></div>
         <div id="submit">
-            <button id="submit-button">Submit</button>
+            <button id="reset-button" onclick="window.location.reload()">Reset Game</button>
+            <button id="submit-button" onclick="playRound()">Submit</button>
+            <button id="nextRound-button" onclick="nextRound()" style="display: none;">Next Round</button>
         </div>
     </div>
     <div class="options">
