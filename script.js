@@ -163,14 +163,23 @@ function gameOver() {
     const preview = document.getElementById('preview')
     const humanScore = document.querySelector('#h-score');
     const computerScore = document.querySelector('#c-score');
+    const results = document.querySelector('#results');
+    const submit = document.querySelector('#submit-button');
+    const nextRound = document.querySelector('#nextRound-button');
 
     while (preview.firstChild) {
         preview.removeChild(preview.lastChild)
     }
+    results.textContent = ''
+    submit.style = 'display: none;'
+    nextRound.style = 'display: none;'
 
 
-    if (humanScore > computerScore) {
-        
+    if (humanScore.textContent > computerScore.textContent) {
+        preview.textContent = 'GAME OVER YOU WON'
+    }
+    if (computerScore.textContent > humanScore.textContent) {
+        preview.textContent = 'GAME OVER THE COMPUTER WON'
     }
 
 };
