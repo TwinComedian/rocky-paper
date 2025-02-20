@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
-    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock-Paper-Scissors</title>
 </head>
+
 <body>
-    
+    <div id="scoreboard">
+        <div>
+            <div class="scores" id="h-box">
+                <div id="h-text">You:</div>
+                <div id="h-score">00</div>
+            </div>
+            <div class="scores" id="c-box">
+                <div id="c-text">Opponent:</div>
+                <div id="c-score">00</div>
+            </div>
+        </div>
+        <div id="round">Round:0</div>
+    </div>
+    <div class="selection">
+        <div id="preview">
+            <div id="preview-item" style="height: 150px; width: 150px;"></div>
+            <div id="preview-text">VS</div>
+            <div id="preview-item" style="height: 150px; width: 150px;"></div>
+        </div>
+        <div id="submit">
+            <button id="submit-button">Submit</button>
+        </div>
+    </div>
+    <div class="options">
+        <button id="rock" onclick="selectOption(this.id)"><img id="rockimg" src="img/rock.png" width="70px" height="70px"></button>
+        <button id="paper" onclick="selectOption(this.id)"><img src="img/paper.png" width="70px" height="70px"></button>
+        <button id="scissors" onclick="selectOption(this.id)"><img src="img/scissors.png" width="70px" height="70px"></button>
+    </div>
 </body>
+
 </html>

@@ -12,33 +12,6 @@ function getComputerChoice() {
 
 }
 
-function getHumanChoice() {
-    let response = 'string'
-    let a = 'string'
-    let keepgoing = true
-
-    while (keepgoing) {
-        response = prompt('rock | paper | scissors')
-        switch (response.toLowerCase()) {
-            case 'rock':
-                a = "rock";
-                keepgoing = false;
-                break;
-            case 'paper':
-                a = 'paper';
-                keepgoing = false;
-                break;
-            case 'scissors':
-                a = 'scissors';
-                keepgoing = false;
-                break;
-        }
-    }
-
-    return a
-
-}
-
 function playRound(humanChoice, computerChoice, resultsTable) {
 
     let gamestring = 'h' + humanChoice.charAt(0) + 'c' + computerChoice.charAt(0);
@@ -63,6 +36,20 @@ function playRound(humanChoice, computerChoice, resultsTable) {
     return result
 }
 
+function selectOption(clicked_id) {
+    console.log("Button clicked - " + clicked_id);
+    let preview = document.getElementById('preview-item');
+    let image = document.createElement('img')
+    image.src = "img/" + clicked_id + ".png";
+    image.style = "height: 150px; width: 150px;"
+    if (preview.childElementCount > 0) {
+        preview.removeChild(preview.childNodes[0])
+    }
+    preview.appendChild(image)
+}
+
+
+
 const winnerTable = {
     hrcr: "=",
     hrcs: "h",
@@ -74,23 +61,4 @@ const winnerTable = {
 
 let humanScore = 0;
 let computerScore = 0;
-
-let round = 0
-while (round < 5) {
-    let winner = playRound(getHumanChoice(), getComputerChoice(), winnerTable)
-
-    if (winner == 'h') {
-        humanScore += 1
-    }
-    if (winner == 'c') {
-        computerScore += 1
-    }
-
-    console.log('---SCORE---')
-    console.log('Your Score: ' + humanScore)
-    console.log('Computer Score: ' + computerScore)
-    console.log(' ')
-
-    round++
-
-}
+let round = 0;
